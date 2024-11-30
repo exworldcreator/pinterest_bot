@@ -1,0 +1,8 @@
+/downloaded_images
+downloaded_images
+venv
+.venv
+/venv
+.env
+env
+__pycache__
