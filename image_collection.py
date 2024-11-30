@@ -62,7 +62,7 @@ async def download_image(images):
 
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
 
         await login_to_pinterest(page)
