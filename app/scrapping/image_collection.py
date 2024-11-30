@@ -27,9 +27,12 @@ async def collect_images(page, num_images=5):
     image_elements = await page.query_selector_all('img[srcset]')
 
     for i, img in enumerate(image_elements[:num_images]):
-        src = await img.get_attribute('src')
-        if src:
-            images.append(src)
+        srcset = await img.get_attribute('srcset')
+        if srcset:
+            srcset_urls = srcset.split(', ')
+            highest_quality_url = srcset_urls[-1].split(' ')[0]
+            images.append(highest_quality_url)
+            
         if i == num_images - 1:
             break
 
