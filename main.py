@@ -1,8 +1,9 @@
 import asyncio
 import logging
 from aiogram import Bot, Dispatcher
-import aiogram_handlers, image_collection
-from aiogram_handlers import register_handlers
+import app.aiogram.aiogram_handlers as aiogram_handlers
+import app.scrapping.image_collection as image_collection
+from app.aiogram.aiogram_handlers import register_handlers
 from database import connect_to_db, create_user_table
 from dotenv import load_dotenv
 import os
